@@ -2,6 +2,8 @@
 
 function ErrorFactory(type='Unnamed') {
 
+  type = (typeof type === 'string') ? type : 'Unnamed';
+
   let errorType = `${type.charAt(0).toUpperCase()}${type.slice(1)}Error`;
 
   class CustomError extends Error {
