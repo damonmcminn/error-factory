@@ -1,0 +1,27 @@
+{
+  "name": "error-factory",
+  "version": "0.1.0",
+  "description": "Easily create subclassed Error functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damonmcminn/error-factory.git"
+  },
+  "keywords": [
+    "error",
+    "custom",
+    "subclass"
+  ],
+  "author": "Damon McMinn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damonmcminn/error-factory/issues"
+  },
+  "homepage": "https://github.com/damonmcminn/error-factory",
+  "devDependencies": {
+    "jasmine": "^2.2.1"
+  }
+}
