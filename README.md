@@ -1,2 +1,2 @@
-# error-factory
-Easily create subclassed Error functions
+# simple-error-factory
+Simply create subclassed Error functions

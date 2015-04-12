@@ -1,7 +1,7 @@
 {
-  "name": "error-factory",
+  "name": "simple-error-factory",
   "version": "0.1.0",
-  "description": "Easily create subclassed Error functions",
+  "description": "Simply create subclassed Error functions",
   "main": "index.js",
   "scripts": {
     "test": "jasmine"
