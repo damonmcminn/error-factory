@@ -24,9 +24,17 @@ try {
   // => bar;
 }
 
-// DEFAULTS
-var defaultError = ErrorFactory();
+// OPTIONAL extra properties
+var NaughtyError = ErrorFactory('naughty');
+var err = NaughtyError('tut tut', {code: 401});
+err.name // => NaughtyError
+err.message // => tut tut
+err.code // => 401
 
-defaultError();
-// => { [UnnamedError: Message not defined] name: 'UnnamedError', message: 'Message not defined' }
+// DEFAULTS
+var createDefaultError = ErrorFactory();
+var err = createDefaultError();
+
+err.name // => UnnamedError
+err.message // => Message not defined
 ```
