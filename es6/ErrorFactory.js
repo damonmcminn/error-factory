@@ -1,4 +1,8 @@
 'use strict';
+module.exports = ErrorFactory;
+
+import { install } from 'source-map-support';
+install();
 
 function ErrorFactory(type='Unnamed') {
 
@@ -16,9 +20,29 @@ function ErrorFactory(type='Unnamed') {
     }
   }
 
-  return function(message='Message not defined') {
-    return new CustomError(message);
+  return function(message='Message not defined', props) {
+    let err = new CustomError(message);
+
+    if (props) {
+      for (let [key, val] of getKeyValuePairs(props)) {
+        if (isAllowedProperty(key)) {
+          err[key] = val;
+        }
+      }
+    }
+
+    return err;
+
   }
 }
 
-module.exports = ErrorFactory;
+
+// PRIVATE HELPER FUNCTIONS
+function getKeyValuePairs(obj) {
+  return Object.keys(obj)
+    .map(key => [key, obj[key]]);
+}
+
+function isAllowedProperty(key) {
+  return ['name', 'message'].every(val => key !== val)
+}

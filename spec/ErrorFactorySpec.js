@@ -44,4 +44,24 @@ describe('ErrorFactory', function() {
 
   });
 
+  it('should attach arbitrary properties to the Error object', function() {
+
+    var arbitraryProperties = {foo: 'foo', bar: []};
+    var err = ErrorFactory('customProps')('custom error', arbitraryProperties);
+
+    expect(err.foo).toBe('foo');
+    expect(err.bar).toEqual(jasmine.any(Array));
+
+  });
+
+  it('should not overwrite name or message', function() {
+
+    var nameAndMessage = {name: 'overwritten', message: 'overwritten'};
+    var err = ErrorFactory()('no message', nameAndMessage);
+
+    expect(err.name).toBe('UnnamedError');
+    expect(err.message).toBe('no message');
+
+  });
+
 });
