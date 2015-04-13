@@ -4,7 +4,8 @@
   "description": "Simply create subclassed Error functions",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "compile": "babel es6 --out-dir lib --souce-maps"
   },
   "repository": {
     "type": "git",
